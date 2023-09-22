@@ -26,10 +26,16 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     #파이썬 명령어 지정
-    - name: Install Dependencies
+    - name: Install Dependencies MIN
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name : PWD
+      run: |
+        pwd
+    - name : Run Tests
+      run: |
+        python manage.py test
 #    - name: DB 1
 #      run: |
 #        python manage.py makemigrations
