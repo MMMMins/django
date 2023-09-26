@@ -21,3 +21,4 @@ jobs:
           script: |
             cd /home/cicd/code/django
             git pull
+
