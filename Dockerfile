@@ -13,8 +13,8 @@ COPY requirements.txt ./
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN python manage.py collectstatic
 RUN pip install gunicorn
-
 EXPOSE 8000
 
 CMD ["gunicorn", "--bind",  "0.0.0.0:8000", "config.wsgi:application"]
